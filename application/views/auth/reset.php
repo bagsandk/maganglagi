@@ -15,22 +15,22 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
-    <link href="<?= base_url() ?>/assets/css/material-kit.css?v=2.0.7" rel="stylesheet" />
+    <link href="<?= base_url() ?>/assets/css/material-kit.css" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="<?= base_url() ?>/assets/demo/demo.css" rel="stylesheet" />
 </head>
 
 <body class="profile-page">
-    <div class="container">
+    <div class="container mt-5">
         <div class="row mt-5">
-            <div class="col-lg-4 col-md-6 ml-auto mr-auto">
-                <div class="card card-login">
+            <div class="col-lg-4 col-md-6 ml-auto mr-auto mt-5">
+                <div class="card card-login mt-5">
                     <div class="card-header card-header-primary text-center">
                         <h4 class="card-title">Verifikasi</h4>
                     </div>
-                    <p class="description text-center">Cek pesan whatsapp</p>
-                    <p class="description text-center"><?= $this->session->userdata('verif'); ?></p>
-                    <p class="description text-center">Masukan kode OTP</p>
+                    <p class="description text-center text-dongker">Cek pesan whatsapp</p>
+                    <p class="description text-center text-dongker"><?= $this->session->userdata('verif'); ?></p>
+                    <p class="description text-center text-dongker">Masukan kode OTP</p>
                     <div class="card-body">
                         <?php echo form_open('auth/verif', array("role" => "form")); ?>
                         <div class="form-group">
@@ -38,7 +38,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="material-icons">lock</i></span>
                                 </div>
-                                <input style="text-transform: capitalize;" class="form-control" placeholder="OTP" type="text" name="otp">
+                                <input style="text-transform: capitalize;" class="form-control" placeholder="OTP" type="text" name="otp" maxlength="4" onkeypress=" return angka(event);">
                                 <span class="text-danger"><?php echo form_error('otp'); ?></span>
                             </div>
                         </div>
@@ -57,8 +57,8 @@
             <nav class="float-left">
                 <ul>
                     <li>
-                        <a href="<?= base_url('') ?>">
-                            SYSYNDEV
+                        <a>
+                            Magang run system
                         </a>
                     </li>
                 </ul>
@@ -67,20 +67,14 @@
                 &copy;
                 <script>
                     document.write(new Date().getFullYear())
-                </script>, made with <i class="material-icons">favorite</i> by sysyndev
+                </script>
             </div>
         </div>
     </footer>
-    <script src="<?= base_url() ?>/assets/js/core/jquery.min.js" type="text/javascript"></script>
-    <script src="<?= base_url() ?>/assets/js/core/popper.min.js" type="text/javascript"></script>
-    <script src="<?= base_url() ?>/assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
-    <script src="<?= base_url() ?>/assets/js/plugins/moment.min.js"></script>
     <script src="<?= base_url() ?>/assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
-    <script src="<?= base_url() ?>/assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
     <script src="<?= base_url() ?>/assets/js/material-kit.js?v=2.0.7" type="text/javascript"></script>
-    <script src="<?= base_url() ?>/assets/datatables/jquery.dataTables.min.js"></script>
-    <script src="<?= base_url() ?>/assets/datatables/dataTables.bootstrap4.min.js"></script>
-    <script src="<?= base_url() ?>/assets/datatables/datatables-demo.js"></script>
+    <script src="<?= base_url() ?>/assets/js/cek.js"></script>
+
 </body>
 
 </html>

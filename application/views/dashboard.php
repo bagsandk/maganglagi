@@ -1,5 +1,5 @@
 <!-- Page Heading -->
-<div class="page-header header-filter" data-parallax="true" style="background-image: url('<?= base_url() ?>assets/img/city-profile.jpg');">
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('<?= base_url() ?>assets/img/b4.jpg');">
 	<div class="container text-center">
 		<h1>Dashboard</h1>
 	</div>
@@ -15,8 +15,8 @@
 							<div class="card-body">
 								<div class="row no-gutters align-items-center">
 									<div class="col mr-2">
-										<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Karyawan</div>
-										<div class="h5 mb-0 font-weight-bold text-gray-800"><?= $karyawan; ?></div>
+										<div class="text-xs font-weight-bold text-dongker text-uppercase mb-1">Karyawan</div>
+										<div class="h5 mb-0 font-weight-bold text-dark"><?= $karyawan; ?></div>
 									</div>
 									<div class="col-auto">
 										<i class="material-icons">assignment_ind</i>
@@ -34,8 +34,8 @@
 							<div class="card-body">
 								<div class="row no-gutters align-items-center">
 									<div class="col mr-2">
-										<div class="text-xs font-weight-bold text-success text-uppercase mb-1">Mahasiswa Magang</div>
-										<div class="h5 mb-0 font-weight-bold text-gray-800"><?= $magang; ?></div>
+										<div class="text-xs font-weight-bold text-dongker text-uppercase mb-1">Mahasiswa Magang</div>
+										<div class="h5 mb-0 font-weight-bold text-dark"><?= $magang; ?></div>
 									</div>
 									<div class="col-auto">
 										<i class="material-icons">accessibility_new</i>
@@ -52,8 +52,8 @@
 							<div class="card-body">
 								<div class="row no-gutters align-items-center">
 									<div class="col mr-2">
-										<div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Permintaan Magang</div>
-										<div class="h5 mb-0 font-weight-bold text-gray-800"><?= $pending; ?></div>
+										<div class="text-xs font-weight-bold text-dongker text-uppercase mb-1">Permintaan Magang</div>
+										<div class="h5 mb-0 font-weight-bold text-dark"><?= $pending; ?></div>
 									</div>
 									<div class="col-auto">
 										<i class="material-icons">bookmark</i>
@@ -70,8 +70,8 @@
 							<div class="card-body">
 								<div class="row no-gutters align-items-center">
 									<div class="col mr-2">
-										<div class="text-xs font-weight-bold text-warning text-uppercase mb-1">User Aktif</div>
-										<div class="h5 mb-0 font-weight-bold text-gray-800"><?= $aktif; ?></div>
+										<div class="text-xs font-weight-bold text-dongker text-uppercase mb-1">User Aktif</div>
+										<div class="h5 mb-0 font-weight-bold text-dark"><?= $aktif; ?></div>
 									</div>
 									<div class="col-auto">
 										<i class="material-icons">verified_user</i>

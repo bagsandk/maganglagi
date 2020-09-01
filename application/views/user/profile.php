@@ -1,4 +1,4 @@
-<div class="page-header header-filter" data-parallax="true" style="background-image: url('../assets/img/city-profile.jpg');">
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('<?= base_url() ?>/assets/img/b3.jpg');">
     <div class="container text-center">
         <?= $this->session->flashdata('message'); ?>
     </div>

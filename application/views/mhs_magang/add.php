@@ -1,4 +1,4 @@
-<div class="page-header header-filter" data-parallax="true" style="background-image: url(./assets/img/profile_city.jpg); transform: translate3d(0px, 0px, 0px);">
+<div class="page-header header-filter" data-parallax="true" style="background-image: url(<?= base_url() ?>/assets/img/b3.jpg); transform: translate3d(0px, 0px, 0px);">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 ml-auto mr-auto">

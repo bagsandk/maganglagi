@@ -1,4 +1,4 @@
-<div class="page-header header-filter" data-parallax="true" style="background-image: url(./assets/img/profile_city.jpg); transform: translate3d(0px, 0px, 0px);">
+<div class="page-header header-filter" data-parallax="true" style="background-image: url(<?= base_url() ?>/assets/img/b4.jpg); transform: translate3d(0px, 0px, 0px);">
     <div class="container ">
         <div class="row mt-2">
             <div class="col-md-6">
@@ -127,7 +127,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="material-icons">contact_phone</i></i></span>
                         </div>
-                        <input class="form-control" placeholder="Phone Number" type="text" name="phone" id="phone" onkeypress=" return angka(event);">
+                        <input class="form-control" placeholder="Phone Number" type="text" name="phone" id="phone" onkeypress=" return angka(event);" maxlength="13">
                         <span class="text-danger"><?php echo form_error('phone'); ?></span>
                     </div>
                 </div>

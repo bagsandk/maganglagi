@@ -2,7 +2,7 @@
 
 <head>
 	<meta charset="utf-8" />
-	<link rel="apple-touch-icon" sizes="76x76" href="<?= base_url() ?>/assets/img/apple-icon.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?= base_url() ?>/assets/img/favicon.png">
 	<link rel="icon" type="image/png" href="<?= base_url() ?>/assets/img/favicon.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>
@@ -15,7 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 	<!-- CSS Files -->
-	<link href="<?= base_url() ?>/assets/css/material-kit.css?v=2.0.7" rel="stylesheet" />
+	<link href="<?= base_url() ?>/assets/css/material-kit.css" rel="stylesheet" />
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link href="<?= base_url() ?>/assets/demo/demo.css" rel="stylesheet" />
 </head>
@@ -24,7 +24,7 @@
 	<nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
 		<div class="container">
 			<div class="navbar-translate">
-				<a class="navbar-brand" href="https://demos.creative-tim.com/material-kit/index.html">
+				<a class="navbar-brand" href="<?= base_url(); ?>">
 					Magang </a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="sr-only">Toggle navigation</span>
@@ -114,7 +114,7 @@
 				<ul>
 					<li>
 						<a href="<?= base_url('') ?>">
-							SYSYNDEV
+							Magang Run System
 						</a>
 					</li>
 				</ul>
@@ -123,7 +123,7 @@
 				&copy;
 				<script>
 					document.write(new Date().getFullYear())
-				</script>, made with <i class="material-icons">favorite</i> by sysyndev
+				</script>
 			</div>
 		</div>
 	</footer>

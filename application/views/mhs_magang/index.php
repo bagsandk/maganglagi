@@ -1,4 +1,4 @@
-<div class="page-header header-small header-filter clear-filter purple-filter " data-parallax="true" style="background-image: url('./assets/img/bg2.jpg');">
+<div class="page-header header-small header-filter  " data-parallax="true" style="background-image: url('./assets/img/b2.jpg');">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 ml-auto mr-auto">
