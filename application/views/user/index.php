@@ -45,7 +45,7 @@
 											<td><?php echo $t['display_name']; ?></td>
 											<td><?php echo $t['email']; ?></td>
 											<td><?php echo $t['phone']; ?></td>
-											<td><?php echo ($t['role'] == 1) ? 'Admin' : (($t['role'] == 2) ? 'Pegawai' : 'Mahasiswa') ?></td>
+											<td><?php echo ($t['role'] == 1) ? 'Admin' : (($t['role'] == 2) ? 'Karyawan' : 'Mahasiswa') ?></td>
 											<td <?php echo $t['active'] == 't' ? 'class="text-success">Aktif' : 'class="text-danger">Tidak aktif'; ?></td> <td><?php echo $t['last_login']; ?></td>
 											<td>
 												<a href="<?php echo site_url('user/edit/' . $t['id_user']); ?>" class="btn btn btn-warning btn-circle btn-sm mr-2" data-toggle="tooltip" data-placement="top" title="Edit user">

@@ -53,9 +53,14 @@ class User_model extends CI_Model
         return $this->db->delete('tbl_users', array('id_user' => $id_user));
     }
 
-    function get_free_users()
+    function get_free_users_mhs()
     {
-        $query = "SELECT * FROM tbl_users WHERE tbl_users.id_user NOT in (SELECT id_user FROM tbl_karyawan UNION SELECT id_user FROM tbl_mhs_magang) and tbl_users.role != 1";
+        $query = "SELECT * FROM tbl_users WHERE tbl_users.id_user NOT in (SELECT id_user FROM tbl_karyawan UNION SELECT id_user FROM tbl_mhs_magang) and tbl_users.role = 3";
+        return $this->db->query($query)->result_array();
+    }
+    function get_free_users_karyawan()
+    {
+        $query = "SELECT * FROM tbl_users WHERE tbl_users.id_user NOT in (SELECT id_user FROM tbl_karyawan UNION SELECT id_user FROM tbl_mhs_magang) and tbl_users.role = 2";
         return $this->db->query($query)->result_array();
     }
 }

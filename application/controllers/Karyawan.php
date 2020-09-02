@@ -28,6 +28,7 @@ class Karyawan extends CI_Controller
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('gender', 'Gender', 'required');
+        $this->form_validation->set_rules('id_user', 'Id_User', 'required');
         $this->form_validation->set_rules('birth_pl', 'Birth_pl', 'required');
         $this->form_validation->set_rules('birth_dt', 'Birth_dt', 'required');
         $this->form_validation->set_rules('religion', 'Religion', 'required');
@@ -39,6 +40,7 @@ class Karyawan extends CI_Controller
             $params = array(
                 'karyawan_name' => $this->input->post('name1') . ' ' . $this->input->post('name2'),
                 'birth_pl' => $this->input->post('birth_pl'),
+                'id_user' => $this->input->post('id_user'),
                 'birth_dt' => $this->input->post('birth_dt'),
                 'religion' => $this->input->post('religion'),
                 'gender' => $this->input->post('gender'),
@@ -50,9 +52,8 @@ class Karyawan extends CI_Controller
             redirect('karyawan');
         } else {
             $this->load->model('User_model');
-            $data['users'] = $this->User_model->get_free_users();
+            $data['users'] = $this->User_model->get_free_users_karyawan();
             $data['tittle'] = 'Tambah Data karyawan';
-
             $data['_view'] = 'karyawan/add';
             $this->load->view('layouts/main', $data);
         }

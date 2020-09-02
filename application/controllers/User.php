@@ -37,6 +37,19 @@ class User extends CI_Controller
         $this->form_validation->set_rules('role', 'Role', 'required');
 
         if ($this->form_validation->run()) {
+            $new = 'default.png';
+            if (isset($_FILES["photo"])) {
+                $up_photo = $_FILES["photo"];
+                $config['upload_path'] = './assets/img/profil/';
+                $config['allowed_types'] = 'gif|jpg|png';
+                $config['max_size']     = '2000';
+                $this->load->library('upload', $config);
+                if ($this->upload->do_upload('photo')) {
+                    $new = $this->upload->data('file_name');
+                } else {
+                    echo $this->upload->display_errors();
+                }
+            }
             $email = $this->input->post('email', true);
             $params1 = array(
                 'email' => htmlspecialchars($email),
@@ -45,7 +58,7 @@ class User extends CI_Controller
                 'active' => $this->input->post('active'),
                 'display_name' => $this->input->post('name'),
                 'phone' => $this->input->post('phone'),
-                'photo' => 'default.png',
+                'photo' => $new,
                 'created_at' => date('Y-m-d H:i:s')
             );
             $this->User_model->add_user($params1);
@@ -64,6 +77,7 @@ class User extends CI_Controller
         $data['user'] = $this->User_model->get_user($id_user);
 
         if (isset($data['user']['id_user'])) {
+            $user = $this->User_model->get_user($id_user);
             $this->load->library('form_validation');
             if ($this->input->post('password') !== "") {
                 $pass = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
@@ -78,12 +92,30 @@ class User extends CI_Controller
             $this->form_validation->set_rules('phone', 'Phone', 'required|numeric');
 
             if ($this->form_validation->run()) {
+                $new = 'default.png';
+                if (isset($_FILES["photo"])) {
+                    $up_photo = $_FILES["photo"];
+                    $config['upload_path'] = './assets/img/profil/';
+                    $config['allowed_types'] = 'gif|jpg|png';
+                    $config['max_size']     = '2000';
+                    $this->load->library('upload', $config);
+                    if ($this->upload->do_upload('photo')) {
+                        $new = $this->upload->data('file_name');
+                        $foto_lama = $user['photo'];
+                        if ($foto_lama != 'default.png') {
+                            unlink(FCPATH . 'assets/img/profile/' . $foto_lama);
+                        }
+                    } else {
+                        echo $this->upload->display_errors();
+                    }
+                }
                 $params = array(
                     'password' => $pass,
                     'email' => $this->input->post('email'),
                     'display_name' => $this->input->post('name'),
                     'role' => $this->input->post('role'),
                     'phone' => $this->input->post('phone'),
+                    'photo' => $new,
                     'active' => $this->input->post('active'),
                     'updated_at' => date('Y-m-d H:i:s')
                 );

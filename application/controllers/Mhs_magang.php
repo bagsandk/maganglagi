@@ -73,7 +73,7 @@ class Mhs_magang extends CI_Controller
             redirect('mhs_magang');
         } else {
             $this->load->model('User_model');
-            $data['users'] = $this->User_model->get_free_users();
+            $data['users'] = $this->User_model->get_free_users_mhs();
             $data['tittle'] = 'Tambah Data Mahasiswa Magang';
             $data['_view'] = 'mhs_magang/add';
             $this->load->view('layouts/main', $data);

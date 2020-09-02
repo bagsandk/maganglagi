@@ -13,7 +13,7 @@
 <div class="main main-raised">
 	<div class="container">
 		<div class="section text-center">
-			<?php echo form_open('user/edit/' . $user['id_user'], array("role" => "form")); ?>
+			<?php echo form_open_multipart('user/edit/' . $user['id_user'], array("role" => "form")); ?>
 			<div class="form-group">
 				<div class="input-group input-group-merge input-group-alternative mb-3">
 					<div class="input-group-prepend">
@@ -50,6 +50,19 @@
 					<span class="text-danger"><?php echo form_error('password'); ?></span>
 				</div>
 			</div>
+			<div class="form-group">
+				<div class="input-group input-group-merge input-group-alternative mt-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="material-icons">picture_in_picture</i>
+							</i></span>
+					</div>
+					<div class="custom-file">
+						<input type="file" name="photo" class="custom-file-input" id="customFile" accept="image/*" />
+						<label class="custom-file-label border-bottom" for="customFile">Foto</label>
+					</div>
+					<span class="text-danger"><?php echo form_error('photo'); ?></span>
+				</div>
+			</div>
 			<div class="row">
 				<div class="form-group col-md-6">
 					<div class="input-group input-group-merge input-group-alternative  mt-3">
@@ -79,7 +92,7 @@
 						<select name="role" class="form-control">
 							<option value="">Role</option>
 							<?php
-							$role = array(1 => 'Karyawan', 3 => 'Mahasiswa',);
+							$role = array(2 => 'Karyawan', 3 => 'Mahasiswa', 1 => 'Admin');
 							foreach ($role as $i => $p) {
 								$selected = ($i == $this->input->post('role') ? ' selected="selected"' : ($i == $user['role'] ? ' selected="selected"' :  ""));
 								echo '<option value="' . $i . '"' . $selected . '>' . $p . '</option>';
@@ -91,7 +104,7 @@
 				</div>
 			</div>
 			<div class="text-center">
-				<button type="submit" name="register" class="btn btn-info mt-4">Tambah User</button>
+				<button type="submit" name="register" class="btn btn-info mt-4">Update User</button>
 			</div>
 			<?php echo form_close(); ?>
 		</div>

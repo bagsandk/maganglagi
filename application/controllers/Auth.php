@@ -124,6 +124,10 @@ class Auth extends CI_Controller
                         'foto' => $user['photo'],
                         'phone' => $user['phone']
                     ];
+                    if ($user['role'] == 2) {
+                        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Login untuk karyawan belum tersedia!</div>');
+                        redirect('auth');
+                    }
                     $this->session->set_userdata($data);
                     if ($user['role'] == 1) {
                         redirect('dashboard');
